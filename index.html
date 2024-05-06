@@ -1,42 +1,75 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<title>What Athlete Needs</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-	</head>
-	<body class="is-preload">
+    <head>
+        <title>What Athlete Needs</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+    </head>
+    <body class="is-preload">
 
-		<!-- Header -->
-			<header id="header">
-				<h1>What Athlete Needs</h1>
-				<!-- <p>Your ultimate guide to sports equipment and training tips.<br /> -->
-				<p>Your one-stop shop for all types of sports products! <br />
+        <!-- Header -->
+            <header id="header">
+                <h1>What Athlete Needs</h1>
+                <p>Your one-stop shop for all types of sports products! <br />
+                Visit us at <a href="https://whatathleteneeds.com/">What Athlete Needs</a>.</p>
+            </header>
 
-				Visit us at <a href="https://whatathleteneeds.com/">What Athlete Needs</a>.</p>
-			</header>
-
-		<!-- Signup Form -->
-			<form id="signup-form" method="post" action="#">
+			
+			<!-- Signup Form -->
+            <form id="signup-form" method="post" action="#">
 				<input type="email" name="email" id="email" placeholder="Email Address" />
-				<input type="submit" value="Subscribe" />
-			</form>
+                <input type="submit" value="Subscribe" />
+            </form>
+		
+			<!-- Countdown Timer -->
+				<p id="countdown"></p>
 
-		<!-- Footer -->
-			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; What Athlete Needs.</li><li>Credits: <a href="https://whatathleteneeds.com/">What Athlete Needs</a></li>
-				</ul>
-			</footer>
+        <!-- Footer -->
+            <footer id="footer">
+                <ul class="icons">
+                    <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                    <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                </ul>
+                <ul class="copyright">
+                    <li>&copy; What Athlete Needs.</li><li>Credits: <a href="https://whatathleteneeds.com/">What Athlete Needs</a></li>
+                </ul>
+            </footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/main.js"></script>
+        <!-- Scripts -->
+            <script src="assets/js/main.js"></script>
+            <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date();
+                countDownDate.setDate(countDownDate.getDate() + 30);
 
-	</body>
+                // Update the count down every 1 second
+                var countdownfunction = setInterval(function() {
+
+                    // Get today's date and time
+                    var now = new Date().getTime();
+
+                    // Find the distance between now and the count down date
+                    var distance = countDownDate - now;
+
+                    // Time calculations for days, hours, minutes and seconds
+                    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    // Display the result in the element with id="countdown"
+                    document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+                    + minutes + "m " + seconds + "s ";
+
+                    // If the count down is finished, write some text 
+                    if (distance < 0) {
+                        clearInterval(countdownfunction);
+                        document.getElementById("countdown").innerHTML = "LAUNCHED";
+                    }
+                }, 1000);
+            </script>
+
+    </body>
 </html>

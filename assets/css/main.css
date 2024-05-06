@@ -834,6 +834,14 @@ button,
         margin-top: 0;
         position: absolute; } }
 
+
+/* countdown */
+p#countdown {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.5em;
+  margin: 0 0 1em 0; }
+
+
 /* Footer */
 #footer {
   -moz-transition: opacity 0.5s ease-in-out;
@@ -885,3 +893,6 @@ button,
       left: auto;
       margin: 1em 0 0 0;
       position: relative; } }
+
+
+
