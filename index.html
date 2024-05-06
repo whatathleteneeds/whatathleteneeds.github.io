@@ -3,95 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Athlete Needs - Coming Soon</title>
+    <title>What Athlete Needs</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #f9f9f9;
+            color: #333;
         }
 
-        .container {
+        header {
+            background-color: #4CAF50;
+            padding: 20px 0;
             text-align: center;
         }
 
-        h1 {
-            font-size: 3em;
-            color: #333;
+        header h1 {
+            font-size: 2em;
+            color: #fff;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #fff;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .cta {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #f4f4f4;
+        }
+
+        .cta h2 {
+            font-size: 2em;
+        }
+
+        .cta p {
+            font-size: 1.2em;
             margin-bottom: 20px;
         }
 
-        p {
+        .cta button {
+            padding: 15px 30px;
             font-size: 1.2em;
-            color: #666;
-            margin-bottom: 30px;
-        }
-
-        #countdown {
-            font-size: 2em;
-            color: #333;
-            margin-bottom: 30px;
-        }
-
-        #subscribe-form input[type="email"] {
-            padding: 10px;
-            width: 300px;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        #subscribe-form input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #333;
+            background-color: #4CAF50;
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        #subscribe-form input[type="submit"]:hover {
-            background-color: #555;
+        .cta button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #333;
+            color: #fff;
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>What Athlete Needs</h1>
-        <p>We're launching soon!</p>
-        <div id="countdown"></div>
-        <form id="subscribe-form" action="#" method="post">
-            <input type="email" name="email" placeholder="Enter your email address" required>
-            <input type="submit" value="Subscribe">
-        </form>
+    </header>
+
+    <div class="container">
+        <div class="hero">
+            <h2>Transform Your Training Experience</h2>
+            <p>Discover the latest tools and techniques for peak performance.</p>
+        </div>
+
+        <div class="cta">
+            <h2>Ready to Get Started?</h2>
+            <p>Subscribe to our newsletter for updates and exclusive content!</p>
+            <button>Subscribe Now</button>
+        </div>
     </div>
 
-    <script>
-        // Countdown timer
-        const countdownDate = new Date('2024-12-31').getTime();
-
-        const countdown = setInterval(function() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
-            + minutes + "m " + seconds + "s ";
-
-            if (distance < 0) {
-                clearInterval(countdown);
-                document.getElementById("countdown").innerHTML = "EXPIRED";
-            }
-        }, 1000);
-    </script>
+    <footer>
+        <p>&copy; 2024 What Athlete Needs. All rights reserved.</p>
+    </footer>
 </body>
 </html>
