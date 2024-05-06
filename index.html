@@ -1,125 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatAthleteNeeds</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-            text-align: center;
-        }
-        .header {
-            text-align: center;
-            padding: 50px 0;
-        }
-        .subscribe-form {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .subscribe-form input[type="email"] {
-            padding: 10px;
-            width: 300px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-right: 10px;
-        }
-        .subscribe-form input[type="submit"] {
-            padding: 10px 20px;
-            border: none;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .product-section {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-        .footer a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        .countdown {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <h1>Welcome to WhatAthleteNeeds</h1>
-            <p>Find all your sports essentials in one place!</p>
-        </div>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>What Athlete Needs</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
 
-        <div class="countdown" id="countdown"></div>
+		<!-- Header -->
+			<header id="header">
+				<h1>What Athlete Needs</h1>
+				<!-- <p>Your ultimate guide to sports equipment and training tips.<br /> -->
+				<p>Your one-stop shop for all types of sports products! <br />
 
-        <div class="subscribe-form">
-            <form action="YOUR_MAILCHIMP_FORM_ACTION_URL" method="post" target="_blank">
-                <input type="email" name="EMAIL" placeholder="Your email address" required>
-                <input type="submit" value="Get Notified">
-            </form>
-        </div>
+				Visit us at <a href="https://whatathleteneeds.com/">What Athlete Needs</a>.</p>
+			</header>
 
-        <div class="product-section">
+		<!-- Signup Form -->
+			<form id="signup-form" method="post" action="#">
+				<input type="email" name="email" id="email" placeholder="Email Address" />
+				<input type="submit" value="Subscribe" />
+			</form>
 
-            <p>From workout gear to sports nutrition, we have everything you need to elevate your game.</p>
+		<!-- Footer -->
+			<footer id="footer">
+				<ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+				<ul class="copyright">
+					<li>&copy; What Athlete Needs.</li><li>Credits: <a href="https://whatathleteneeds.com/">What Athlete Needs</a></li>
+				</ul>
+			</footer>
 
-        </div>
-    </div>
+		<!-- Scripts -->
+			<script src="assets/js/main.js"></script>
 
-    <div class="footer">
-        <a href="#">Facebook</a>
-        <a href="#">Instagram</a>
-        <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
-        <br>
-        <span>Terms of Service | Privacy Policy | Contact Us</span>
-        <br>
-        <span>© 2024 WhatAthleteNeeds. All rights reserved.</span>
-    </div>
-
-    <script>
-        // Set the date we're counting down to
-        var countDownDate = new Date();
-        countDownDate.setDate(countDownDate.getDate() + 30);
-
-        // Update the countdown every 1 second
-        var x = setInterval(function() {
-            var now = new Date().getTime();
-            var distance = countDownDate - now;
-
-            // Time calculations for days, hours, minutes and seconds
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-            // Display the result in the element with id="countdown"
-            document.getElementById("countdown").innerHTML = "Launching in: " + days + " days";
-
-            // If the countdown is over, display a message
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "We're launched!";
-            }
-        }, 1000);
-    </script>
-</body>
+	</body>
 </html>
