@@ -3,109 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What Athlete Needs</title>
+    <title>WhatAthleteNeeds</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: #f4f4f4;
         }
-
-        header {
-            background-color: #4CAF50;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2em;
-            color: #fff;
-            margin: 0;
-        }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
-        }
-
-        .hero {
             text-align: center;
-            padding: 100px 0;
-            background-color: #fff;
-            border-bottom: 2px solid #ddd;
         }
-
-        .hero h2 {
-            font-size: 2.5em;
-            margin: 0;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            margin: 20px 0;
-        }
-
-        .cta {
+        .header {
             text-align: center;
             padding: 50px 0;
-            background-color: #f4f4f4;
         }
-
-        .cta h2 {
-            font-size: 2em;
+        .subscribe-form {
+            text-align: center;
+            margin-bottom: 50px;
         }
-
-        .cta p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+        .subscribe-form input[type="email"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
         }
-
-        .cta button {
-            padding: 15px 30px;
-            font-size: 1.2em;
-            background-color: #4CAF50;
-            color: #fff;
+        .subscribe-form input[type="submit"] {
+            padding: 10px 20px;
             border: none;
+            background-color: #007bff;
+            color: #fff;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
         }
-
-        .cta button:hover {
-            background-color: #45a049;
-        }
-
-        footer {
+        .product-section {
             text-align: center;
-            padding: 20px 0;
+            margin-bottom: 50px;
+        }
+        .footer {
             background-color: #333;
             color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .countdown {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>What Athlete Needs</h1>
-    </header>
-
     <div class="container">
-        <div class="hero">
-            <h2>Transform Your Training Experience</h2>
-            <p>Discover the latest tools and techniques for peak performance.</p>
+        <div class="header">
+            <h1>Welcome to WhatAthleteNeeds</h1>
+            <p>Find all your sports essentials in one place!</p>
         </div>
 
-        <div class="cta">
-            <h2>Ready to Get Started?</h2>
-            <p>Subscribe to our newsletter for updates and exclusive content!</p>
-            <button>Subscribe Now</button>
+        <div class="countdown" id="countdown"></div>
+
+        <div class="subscribe-form">
+            <form action="YOUR_MAILCHIMP_FORM_ACTION_URL" method="post" target="_blank">
+                <input type="email" name="EMAIL" placeholder="Your email address" required>
+                <input type="submit" value="Get Notified">
+            </form>
+        </div>
+
+        <div class="product-section">
+            <h2>Explore Our Products</h2>
+            <p>From workout gear to sports nutrition, we have everything you need to elevate your game.</p>
+            <a href="#">Shop Now</a>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2024 What Athlete Needs. All rights reserved.</p>
-    </footer>
+    <div class="footer">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">Twitter</a>
+        <a href="#">LinkedIn</a>
+        <br>
+        <span>Terms of Service | Privacy Policy | Contact Us</span>
+        <br>
+        <span>© 2024 WhatAthleteNeeds. All rights reserved.</span>
+    </div>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 30);
+
+        // Update the countdown every 1 second
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            // Display the result in the element with id="countdown"
+            document.getElementById("countdown").innerHTML = "Launching in: " + days + " days";
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "We're launched!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
